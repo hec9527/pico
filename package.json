@@ -1,0 +1,33 @@
+{
+  "name": "pico",
+  "version": "1.0.0",
+  "description": "pico is a react component library build tool",
+  "keywords": [],
+  "license": "MIT",
+  "author": "hec9527",
+  "main": "index.js",
+  "types": "./index.d.ts",
+  "bin": "./bin/index.js",
+  "scripts": {
+    "pico": "node ./bin/index.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.18.10",
+    "chalk": "^4",
+    "commander": "^9.4.0",
+    "del": "^6.0.0",
+    "fs-extra": "^10.1.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-less": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify": "^3.0.2",
+    "inquirer": "^8.2.0",
+    "lodash": "^4.17.21",
+    "ora": "^5.4.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "prettier-plugin-packagejson": "^2.2.18"
+  }
+}

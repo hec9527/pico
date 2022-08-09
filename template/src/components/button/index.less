@@ -1,0 +1,44 @@
+.btn {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 16px;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: PingFangSC-Medium, 'PingFang SC', sans-serif;
+  line-height: 14px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &.btn-default {
+    color: #2d2d2d;
+    background-color: #fff;
+    border: 1px solid #eee;
+
+    &:active {
+      background-color: #eee;
+    }
+
+    &:disabled {
+      color: #b7b7b7;
+      background-color: #f5f5f5;
+      border-color: #d9d9d9;
+    }
+  }
+
+  &.btn-primary {
+    color: #fff;
+    background-color: #3764ff;
+
+    &:active {
+      background-color: #214fec;
+    }
+
+    &[disabled] {
+      background-color: #d2dcff;
+    }
+  }
+}

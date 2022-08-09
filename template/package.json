@@ -1,0 +1,76 @@
+{
+  "name": "pico-react-components",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "components",
+    "react",
+    "ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "",
+    "branch": "master"
+  },
+  "license": "MIT",
+  "exports": {
+    "import": "./es",
+    "require": "./lib",
+    "default": "./lib"
+  },
+  "main": "lib/index.js",
+  "unpkg": "dist/index.min.js",
+  "module": "es/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "dist",
+    "es",
+    "lib"
+  ],
+  "scripts": {
+    "prebuild": "pico run clean",
+    "build": "pico run build",
+    "build:dest": "pico run build dest",
+    "build:es": "pico run build es",
+    "build:lib": "pico run build lib",
+    "lint": "npm run lint:style && npm run lint:script",
+    "lint:script": "eslint ./src --ext .ts,.tsx --fix",
+    "lint:style": "stylelint **/*.less --fix",
+    "prepub": "npm run lint && npm run build",
+    "pub": "npm publish"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.1",
+    "eslint": "^8.16.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "less": "^4.1.2",
+    "postcss": "^8.4.14",
+    "postcss-less": "^6.0.0",
+    "prettier": "^2.5.1",
+    "prettier-plugin-packagejson": "^2.2.15",
+    "pretty-quick": "^3.1.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "stylelint": "^14.4.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-order": "^5.0.0",
+    "typescript": "^4.5.5"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  }
+}
