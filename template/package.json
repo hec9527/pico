@@ -22,11 +22,6 @@
   "unpkg": "dist/index.min.js",
   "module": "es/index.js",
   "typings": "lib/index.d.ts",
-  "files": [
-    "dist",
-    "es",
-    "lib"
-  ],
   "scripts": {
     "prebuild": "pico run clean",
     "build": "pico run build",
@@ -55,6 +50,7 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.5.0",
     "less": "^4.1.2",
+    "@hec9527/pico": "1.0.0-alpha.1",
     "postcss": "^8.4.14",
     "postcss-less": "^6.0.0",
     "prettier": "^2.5.1",

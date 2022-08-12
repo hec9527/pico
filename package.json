@@ -1,13 +1,25 @@
 {
-  "name": "pico",
-  "version": "1.0.0",
+  "name": "@hec9527/pico",
+  "version": "1.0.2",
   "description": "pico is a react component library build tool",
-  "keywords": [],
+  "keywords": [
+    "util",
+    "react",
+    "cli"
+  ],
   "license": "MIT",
   "author": "hec9527",
-  "main": "index.js",
+  "main": "./bin/index.js",
   "types": "./index.d.ts",
   "bin": "./bin/index.js",
+  "files": [
+    "bin",
+    "cli",
+    "config",
+    "template",
+    "utils",
+    "index.d.ts"
+  ],
   "scripts": {
     "pico": "node ./bin/index.js"
   },
@@ -29,5 +41,8 @@
   "devDependencies": {
     "prettier": "^2.7.1",
     "prettier-plugin-packagejson": "^2.2.18"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
