@@ -1,6 +1,11 @@
 /** @type {import("../index.d").PicoConfig} */
 const config = {
-  enter: 'src/index.tsx',
+  entry: ['./src/index.tsx'],
+  build: {
+    jsGlob: ['src/**/*.{js,jsx,ts,tsx}'],
+    styleGlob: ['src/**/*.{css,less}'],
+  },
+
   outDir: {
     es: 'es',
     commonjs: 'lib',

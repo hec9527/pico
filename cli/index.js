@@ -76,7 +76,13 @@ async function initProject(name, option) {
 function runGulpTask(task) {
   spawn(
     'gulp',
-    ['--gulpfile', `${path.resolve(__dirname, './gulpfile.js')}`, '--cwd', process.cwd(), task],
+    [
+      '--gulpfile',
+      `${path.resolve(__dirname, './gulpfile.js')}`,
+      '--cwd',
+      process.cwd(),
+      task || 'default',
+    ],
     { stdio: 'inherit' },
   );
 }
@@ -85,9 +91,9 @@ function runGulpTask(task) {
  * @param {string|undefined} type
  */
 function build(type) {
-  if (type && !['lib', 'es', 'dest'].includes(type)) {
+  if (type && !['lib', 'es', 'dist'].includes(type)) {
     console.log(
-      chalk.redBright(`  unknown build type, required lib | es | dest, but receive ${type}\n`),
+      chalk.redBright(`  unknown build type, required lib | es | dist, but receive ${type}\n`),
     );
     process.exit(0);
   }

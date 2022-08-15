@@ -1,6 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
-import './index.less';
 
 export interface ButtonProps {
   type?: 'primary' | 'default';
@@ -10,7 +8,7 @@ export interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ type, className, children }) => {
   return (
-    <button type="button" className={classNames('btn', className, `btn-${type}`)}>
+    <button type="button" className={`btn btn-${type} ${className}`}>
       {children}
     </button>
   );
