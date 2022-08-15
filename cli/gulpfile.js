@@ -58,13 +58,9 @@ function buildScript(dir, modules) {
   };
 }
 
-function emitTypeDeclare(dir) {
-  //
-}
-
 function buildType(dir) {
   return function buildType() {
-    return src('../tsconfig.build.json').pipe(typescript()).pipe(dest(dir));
+    return src(path.join(__dirname, '../tsconfig.build.json')).pipe(typescript()).pipe(dest(dir));
   };
 }
 
