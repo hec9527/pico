@@ -23,13 +23,7 @@
   "unpkg": "lib/umd/index.js",
   "types": "lib/es/index.d.ts",
   "scripts": {
-    "test": "pico build",
-    "test1": "node ../bin/index.js build",
-    "prebuild": "pico run clean",
     "build": "pico run build",
-    "build:es": "pico run build es",
-    "build:lib": "pico run build lib",
-    "build:dest": "pico run build dest",
     "lint": "npm run lint:style && npm run lint:script",
     "lint:script": "eslint ./src --ext .ts,.tsx --fix",
     "lint:style": "stylelint **/*.less --fix",
@@ -37,10 +31,10 @@
     "pub": "npm publish"
   },
   "dependencies": {
-    "@hec9527/pico": "link:..",
     "classnames": "^2.2.6"
   },
   "devDependencies": {
+    "@hec9527/pico": "^1.0.0-alpha",
     "@types/react": "^18.0.38",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.59.0",

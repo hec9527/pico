@@ -17,8 +17,7 @@
     "cli",
     "template",
     "utils",
-    "index.d.ts",
-    "template/.gitignore"
+    "index.d.ts"
   ],
   "scripts": {
     "pico": "node ./bin/index.js"
