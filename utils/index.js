@@ -1,5 +1,4 @@
 const path = require('path');
-const fs = require('fs');
 
 const cwd = process.cwd();
 
@@ -11,6 +10,11 @@ function getProjectDir(dir) {
   return path.join(cwd, dir);
 }
 
+function getCliDir(dir) {
+  return path.join(__dirname, '../', dir);
+}
+
 module.exports = {
-  getProjectDir
+  getCliDir,
+  getProjectDir,
 };

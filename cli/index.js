@@ -1,7 +1,6 @@
 const fs = require('fs-extra');
 const ora = require('ora');
 const path = require('path');
-const chalk = require('chalk');
 const inquirer = require('inquirer');
 const { spawn } = require('child_process');
 
@@ -73,39 +72,15 @@ async function initProject(name, option) {
   copyTemplate(projectPath);
 }
 
-function runGulpTask(task) {
+function build() {
   spawn(
     'gulp',
-    [
-      '--gulpfile',
-      `${path.resolve(__dirname, './gulpfile.js')}`,
-      '--cwd',
-      process.cwd(),
-      task || 'default',
-    ],
+    ['--gulpfile', `${path.resolve(__dirname, './gulpfile.js')}`, '--cwd', process.cwd()],
     { stdio: 'inherit' },
   );
-}
-
-/**
- * @param {string|undefined} type
- */
-function build(type) {
-  if (type && !['lib', 'es', 'dist'].includes(type)) {
-    console.log(
-      chalk.redBright(`  unknown build type, required lib | es | dist, but receive ${type}\n`),
-    );
-    process.exit(0);
-  }
-  runGulpTask(type);
-}
-
-function clean() {
-  runGulpTask('clean');
 }
 
 module.exports = {
   initProject,
   build,
-  clean,
 };

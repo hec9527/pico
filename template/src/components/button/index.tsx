@@ -1,5 +1,5 @@
 import Button from './button';
-import './index.less';
+import './button.less';
 
 export type { ButtonProps } from './button';
 

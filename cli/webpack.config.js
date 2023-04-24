@@ -1,52 +1,54 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const babelConfig = require('./babel.config');
 const pkg = require(path.join(process.cwd(), '/package.json'));
 
-/** @returns {import("webpack").Configuration} */
-const getWebpackConfig = postCssPlugins => ({
+/** @type {import("webpack").Configuration} */
+const webpackConfig = {
   mode: 'production',
-  devtool: 'source-map',
   output: {
-    filename: '[name].js',
+    filename: 'index.js',
     libraryTarget: 'umd',
     library: pkg.name,
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+    extensions: ['.js', '.json'],
+  },
+  optimization: {
+    usedExports: true,
+  },
+  performance: {
+    hints: false,
+  },
+  resolveLoader: {
+    modules: [path.join(__dirname, '../node_modules'), path.join(process.cwd(), 'node_modules')],
   },
   module: {
     rules: [
       {
-        test: /.(css|less)$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          { loader: 'css-loader' },
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: postCssPlugins,
-              },
-            },
-          },
-          { loader: 'less-loader' },
-        ],
+        test: /.(css)$/,
+        use: ['style-loader', 'css-loader'],
       },
       {
-        test: /.(j|t)sx?$/,
+        test: /\.(avif|webp|png|svg|jpg|gif|jpeg)$/,
+        type: 'asset/inline',
+      },
+      {
+        test: /.m?js$/,
         use: [
           {
             loader: 'babel-loader',
-            options: babelConfig('auto'),
+            options: {
+              presets: [
+                ['@babel/preset-env', { loose: true, modules: false }],
+                '@babel/preset-typescript',
+                '@babel/preset-react',
+              ],
+            },
           },
         ],
       },
     ],
   },
-  resolveLoader: {
-    modules: [path.join(__dirname, '../node_modules'), path.join(process.cwd(), 'node_modules')],
-  },
+
   externals: {
     react: {
       root: 'React',
@@ -62,7 +64,7 @@ const getWebpackConfig = postCssPlugins => ({
     },
   },
 
-  plugins: [new MiniCssExtractPlugin({ filename: '[name].css' })],
-});
+  plugins: [],
+};
 
-module.exports = getWebpackConfig;
+module.exports = webpackConfig;

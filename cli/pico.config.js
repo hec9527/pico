@@ -1,15 +1,20 @@
 /** @type {import("../index.d").PicoConfig} */
 const config = {
-  entry: ['./src/index.tsx'],
+  entry: ['./lib/es/index.js'],
+
   build: {
-    jsGlob: ['src/**/*.{js,jsx,ts,tsx}'],
+    jsGlob: [
+      './src/**/*.{js,jsx,ts,tsx}',
+      '!./src/**/test/*.{js,jsx,ts,tsx}',
+      '!./src/**/demo/*.{js,jsx,ts,tsx}',
+    ],
     styleGlob: ['src/**/*.{css,less}'],
   },
 
   outDir: {
-    es: 'es',
-    commonjs: 'lib',
-    umd: 'dist',
+    es: './lib/es',
+    cjs: './lib/cjs',
+    umd: './lib/umd',
   },
 };
 

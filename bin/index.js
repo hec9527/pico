@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 
-const { program } = require('commander');
-const pkg = require('../package.json');
 const chalk = require('chalk');
-const { initProject, build, clean } = require('../cli');
+const pkg = require('../package.json');
+const { program } = require('commander');
+const { initProject, build } = require('../cli');
 
 program.name(pkg.name).description(pkg.description).version(`v${pkg.version}`, '-v, --version');
 
 program
   .command('create <project>')
-  .description('create project')
+  .description('create new project, you can provide a custom project name and package manage tool')
   .option('--no-git', "don't init git")
   .option('--engin <type>', 'which package manager to use', 'npm')
   .action((name, option) => {
@@ -24,11 +24,11 @@ program
   });
 
 program
-  .command('build [type]')
+  .command('build')
   .description('build source code')
-  .action(type => {
+  .action(() => {
     console.log(chalk.bold(`\nCompile project\n`));
-    build(type);
+    build();
   })
   .on('--help', () => {
     console.log(chalk.bold('\n\nUsage:\n'));
@@ -46,20 +46,6 @@ program
     console.log('\n\n\n');
   });
 
-program
-  .command('clean')
-  .description('clean dist directory')
-  .action(() => {
-    console.log(chalk.bold(`\nClean dist directory\n`));
-    clean();
-  })
-  .on('--help', () => {
-    console.log(chalk.bold('\n\nUsage:\n'));
-    console.log(chalk.white('    pico clean'));
-    console.log(chalk.gray('    clean output directory'));
-    console.log('\n\n\n');
-  });
-
-program.addHelpText('after', `\nPowered by ${pkg.author}\n\n`);
+program.addHelpText('after', `\npico powered by ${pkg.author}\n\n`);
 
 program.parse(process.argv);

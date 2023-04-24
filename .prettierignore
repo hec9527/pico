@@ -1,1 +1,8 @@
-node_module
+# dir
+node_modules
+lib
+dist
+es
+
+# file
+.DS_Store

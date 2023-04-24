@@ -1,10 +1,11 @@
 {
   "singleQuote": true,
-  "jsxSingleQuote": true,
-  "endOfLine": "lf",
-  "useTabs": false,
   "printWidth": 100,
   "tabWidth": 2,
+  "useTabs": false,
   "arrowParens": "avoid",
-  "trailingComma": "all"
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "editorconfig": true,
+  "endOfLine": "lf"
 }
