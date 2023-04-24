@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "./lib",
     "rootDirs": ["src", "config"],
     "target": "ES6",
     "moduleResolution": "node",
@@ -9,7 +10,7 @@
     "esModuleInterop": true,
     "importHelpers": true,
     "downlevelIteration": true,
-    "sourceMap": false,
+    "sourceMap": true,
     "baseUrl": "./",
     "typeRoots": ["./src/typings", "./node_modules/@types"],
     "lib": ["ES2016", "DOM"],
