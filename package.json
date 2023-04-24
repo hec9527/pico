@@ -29,6 +29,12 @@
       "url": "https://github.com/hec9527"
     }
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hec9527/pico.git",
+    "branch": "master",
+    "platform": "github"
+  },
   "dependencies": {
     "@babel/core": "^7.21.4",
     "@babel/plugin-transform-modules-commonjs": "^7.21.2",
@@ -65,6 +71,7 @@
     "chrome >= 49"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }
