@@ -1,6 +1,6 @@
 {
   "name": "@hec9527/pico",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0-alpha.1",
   "description": "pico is a react component library build tool",
   "keywords": [
     "util",

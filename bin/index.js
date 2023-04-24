@@ -11,12 +11,12 @@ program
   .command('create <project>')
   .description('create new project, you can provide a custom project name and package manage tool')
   .option('--no-git', "don't init git")
-  .action((name, option) => {
+  .action(async (name, option) => {
     console.log('create project', name);
-    initProject(name, option);
-    console.log(chalk.gray(`\n\ncd ${name}`));
-    console.log(chalk.gray('npm install'));
-    console.log(chalk.gray('npm run dev'));
+    await initProject(name, option);
+    console.log(chalk.white('\nrun your project'));
+    console.log(chalk.gray(`    cd ${name} && npm install`));
+    console.log(chalk.gray('    npm run dev'));
   })
   .on('--help', () => {
     console.log(chalk.bold('\n\nUsage:\n'));
