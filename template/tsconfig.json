@@ -14,13 +14,15 @@
     "baseUrl": "./",
     "typeRoots": ["./src/typings", "./node_modules/@types"],
     "lib": ["ES2016", "DOM"],
-    "paths": {},
+    "paths": {
+      "@@/*": [".dumi/tmp/*"]
+    },
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "strict": true,
     "noImplicitAny": true,
     "resolveJsonModule": true
   },
-  "include": ["src"],
+  "include": ["src", ".dumirc.ts", ".dumi/**/*"],
   "exclude": ["node_modules", "lib", "es", "dist"]
 }

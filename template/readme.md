@@ -1,5 +1,32 @@
-<center>
+# s22
 
-# Pico
+[![NPM version](https://img.shields.io/npm/v/s22.svg?style=flat)](https://npmjs.org/package/s22)
+[![NPM downloads](http://img.shields.io/npm/dm/s22.svg?style=flat)](https://npmjs.org/package/s22)
 
-</center>
+A react library
+
+## Development
+
+```bash
+# install dependencies
+$ pnpm install
+
+# develop library by docs demo
+$ pnpm start
+
+# build library source code
+$ pnpm run build
+
+# build library source code in watch mode
+$ pnpm run build:watch
+
+# build docs
+$ pnpm run docs:build
+
+# check your project for potential problems
+$ pnpm run doctor
+```
+
+## LICENSE
+
+MIT
